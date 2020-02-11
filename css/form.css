@@ -1,0 +1,9 @@
+.header{
+    background:linear-gradient(to top right, cyan , blue);
+    padding: 5px;
+    color: white;
+}
+hr{
+    height: 3px;
+    background: linear-gradient(to top right, cyan , blue);
+}
