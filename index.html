@@ -1,59 +1,82 @@
+<!--
+  ~ Copyright (c)  2020, Atef Hares - Information Technology Institute (ITI).
+  ~ Licensed under GNU General Public License v3.0
+  ~
+  ~ https://www.gnu.org/licenses/gpl-3.0.en.html
+  ~
+  ~ Permissions of this strong copyleft license are conditioned on making available complete
+  ~ source code of licensed works and modifications, which include larger works using a
+  ~ licensed work, under the same license. Copyright and license notices must be preserved.
+  ~ Contributors provide an express grant of patent rights.
+  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>Login V19</title>
 	<meta charset="UTF-8">
-	<!--	<title>Title</title>-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-			crossorigin="anonymous"></script>
-	<!--	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"-->
-	<!--			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
-	<!--			crossorigin="anonymous"></script>-->
-
-	<link href="css/index.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!--===============================================================================================-->
 </head>
-
 <body>
 
-<div class="sidenav">
-	<img src="res/1.jpg">
-</div>
+<div class="limiter">
+	<div class="container-login100">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+			<form class="login100-form validate-form">
+					<span id="formHeader" class="login100-form-title p-b-33">
+						Account Login
+					</span>
 
-<div class="main">
-	<div class="header-text">
-		<h2>CV Maker</h2>
-		<p>Login or register from here to access.</p>
-	</div>
-
-	<div class="col-md-6">
-
-		<div class="login-form">
-			<h2>Login</h2>
-			<form>
-				<div class="form-group">
-					<label>User Name</label>
-					<input id="userNameIF" type="text" class="form-control" placeholder="User Name">
-				</div>
-				<div class="form-group">
-					<label>Password</label>
-					<input id="passwordIF" type="password" class="form-control" placeholder="Password">
+				<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+					<input id="emailIF" class="input100" type="text" name="email" placeholder="Email">
+					<span class="focus-input100-1"></span>
+					<span class="focus-input100-2"></span>
 				</div>
 
-				<div class="form-group">
-					<label>Confirm Password</label>
-					<input id="confirmPasswordIF" type="password" class="form-control" placeholder="Password">
+				<div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
+					<input id="passwordIF" class="input100" type="password" name="pass" placeholder="Password">
+					<span class="focus-input100-1"></span>
+					<span class="focus-input100-2"></span>
 				</div>
-				<button id="loginBtn" type="submit" class="btn btn-dark">Login</button>
-				<button id="signupBtn" type="submit" class="btn btn-secondary">Register</button>
-				<a id="switchLogin">Have account? login instead</a>
+
+				<div id="confirmPasswordDiv" class="wrap-input100 rs1 validate-input"
+					 data-validate="Password is required" style="display:none">
+					<input id="confirmPasswordIF" class="input100" type="password" name="pass"
+						   placeholder="Confirm Password">
+					<span class="focus-input100-1"></span>
+					<span class="focus-input100-2"></span>
+				</div>
+
+				<div class="container-login100-form-btn m-t-20">
+					<button id="actionBtn" class="login100-form-btn">
+						Sign in
+					</button>
+				</div>
+
+				<div class="text-center">
+						<span id="switchFormLabel" class="txt1">
+							Create an account?
+						</span>
+
+					<button id="switchForm" class="txt2 hov1">
+						Sign up
+					</button>
+				</div>
+
+				<div class="text-center">
+					<span id="errorMessage" class="error-message">
+							Create an account?
+					</span>
+				</div>
 			</form>
 		</div>
-
 	</div>
 </div>
+
 </body>
 
 <footer>
