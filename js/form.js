@@ -70,6 +70,74 @@ function addNewEducation(e) {
     parent.appendChild(newEducation);
 }
 
+function getFormElementsData() {
+    
+    // contact_informations
+    var fullName = document.getElementById("fullName").value;
+    var infoJobTitle = document.getElementById("infoJobTitle").value;
+    var email = document.getElementById("email").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var city = document.getElementById("city").value;
+
+    // skills
+    [].slice.call(skillsNodes).forEach(skill => {
+        if (skill.getElementsByClassName("skillInput")[0].value) {
+            var newSkill = {
+                name: skill.getElementsByClassName("skillInput")[0].value,
+                level: skill.getElementsByTagName("select")[0].value
+            }
+            skills.push(newSkill);
+        }
+    });
+
+    // work_experance
+    [].slice.call(experanceNodes).forEach(experance => {
+        if (experance.getElementsByClassName("companyName")[0].value) {
+            var newExperance = {
+                companyName: experance.getElementsByClassName("companyName")[0].value,
+                jobTitle: experance.getElementsByClassName("jobTitle")[0].value,
+                startDate: experance.getElementsByClassName("startDate")[0].value,
+                endDate: experance.getElementsByClassName("endDate")[0].value,
+                description: experance.getElementsByClassName("description")[0].value
+            }
+            experances.push(newExperance);
+        }
+    });
+
+    // Education
+    [].slice.call(educationNodes).forEach(education => {
+        if (education.getElementsByClassName("schoolName")[0].value) {
+            var newEducation = {
+                schoolName: education.getElementsByClassName("schoolName")[0].value,
+                educationDegree: education.getElementsByClassName("educationDegree")[0].value,
+                startDate: education.getElementsByClassName("startDate")[0].value,
+                endDate: education.getElementsByClassName("endDate")[0].value
+            }
+            educations.push(newEducation);
+        }
+    });
+
+    //languages
+    [].slice.call(languagesNodes).forEach(lang => {        
+        if (lang.checked) {
+            languages.push(lang.value)
+        }
+    });
+
+    var CVData = {
+        fullName:fullName,
+        jobTitle:infoJobTitle,
+        email:email,
+        phoneNumber:phoneNumber,
+        city:city,
+        skills:skills,
+        educations:educations,
+        experances:experances,
+        languages:languages
+    }
+    return CVData;
+}
+
 // funtion submit the form and save data in local storage
 function formSubmit(e) {
     e.preventDefault();
