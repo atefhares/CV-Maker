@@ -9,6 +9,18 @@ var addSkill = document.getElementById("addSkill");
 var addExperance = document.getElementById("addExperance");
 var addEducation = document.getElementById("addEducation");
 
+// get all form sections
+var skillsNodes = document.getElementsByClassName("skill");
+var experanceNodes = document.getElementsByClassName("experance");
+var educationNodes = document.getElementsByClassName("education");
+var languagesNodes = document.getElementsByClassName("checkbox");
+
+// arrays to save all sections data to add them in local storage
+var skills = [];
+var languages = [];
+var experances = [];
+var educations = [];
+
 // Events
 summit.addEventListener("click", formSubmit);
 addSkill.addEventListener("click", addNewSkill);
