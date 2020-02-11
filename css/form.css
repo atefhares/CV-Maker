@@ -1,9 +1,53 @@
 .header{
-    background:linear-gradient(to top right, cyan , blue);
+    /* background:linear-gradient(to top right, cyan , blue); */
+    background-color: tomato;
     padding: 5px;
     color: white;
 }
 hr{
-    height: 3px;
-    background: linear-gradient(to top right, cyan , blue);
+    height: 2px;
+    background: tomato;
+}
+
+.my-btn-select{
+    background-color: white;
+    color: tomato;   
+    border-color: tomato;
+}
+
+.my-btn-select:hover{
+    background-color: white;
+    color: tomato;   
+}
+.my-btn-select:active{
+    background-color: white;
+    color: tomato;   
+}
+
+.my-btn{
+    background-color: white;
+    color: tomato;   
+    border-color: tomato;
+}
+.my-btn:hover{
+    background-color: tomato;
+    color: white;   
+    border-color: tomato;
+}
+
+.my-btn:active{
+    background-color: white;
+    color: tomato;   
+    border-color: tomato;
+}
+
+.my-btn-sp{
+    background-color: tomato;
+    color: white;   
+    border-color: tomato;
+}
+.my-btn:hover-sp{
+    background-color: tomato;
+    color: white;   
+    border-color: tomato;
 }
