@@ -2,13 +2,18 @@ var err = [];
 var cashederr = [];
 var errClass = document.getElementsByClassName("errors")[0];
 var errUl = document.getElementById("error-messages");
+
+// get all buttons
 var summit = document.getElementById("saveForm");
 var addSkill = document.getElementById("addSkill");
 var addExperance = document.getElementById("addExperance");
+var addEducation = document.getElementById("addEducation");
 
+// Events
 summit.addEventListener("click", formSubmit);
 addSkill.addEventListener("click", addNewSkill);
 addExperance.addEventListener("click", addNewEX);
+addEducation.addEventListener("click", addNewEducation);
 
 function setEmpty(parent) {
     var inputs = parent.getElementsByTagName("input");
@@ -20,6 +25,7 @@ function setEmpty(parent) {
     }
 }
 
+// function to add new skill Section
 function addNewSkill(e) {
     e.preventDefault();
     var parent = document.getElementsByClassName("skills-container")[0];
@@ -30,6 +36,7 @@ function addNewSkill(e) {
     parent.appendChild(newSkill);
 }
 
+// function to add new experance Section
 function addNewEX(e) {
     e.preventDefault();
     var parent = document.getElementsByClassName("experances-container")[0];
@@ -40,6 +47,18 @@ function addNewEX(e) {
     parent.appendChild(newExperance);
 }
 
+// function to add new education Section
+function addNewEducation(e) {
+    e.preventDefault();
+    var parent = document.getElementsByClassName("educations-container")[0];
+    var education = document.getElementsByClassName("education")[0];
+    var newEducation = education.cloneNode(true);
+    setEmpty(parent);
+    parent.appendChild(document.createElement("hr"));
+    parent.appendChild(newEducation);
+}
+
+// funtion submit the form and save data in local storage
 function formSubmit(e) {
     e.preventDefault();
     validateName();
