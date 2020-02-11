@@ -71,7 +71,7 @@ function addNewEducation(e) {
 }
 
 function getFormElementsData() {
-    
+
     // contact_informations
     var fullName = document.getElementById("fullName").value;
     var infoJobTitle = document.getElementById("infoJobTitle").value;
@@ -118,22 +118,22 @@ function getFormElementsData() {
     });
 
     //languages
-    [].slice.call(languagesNodes).forEach(lang => {        
+    [].slice.call(languagesNodes).forEach(lang => {
         if (lang.checked) {
             languages.push(lang.value)
         }
     });
 
     var CVData = {
-        fullName:fullName,
-        jobTitle:infoJobTitle,
-        email:email,
-        phoneNumber:phoneNumber,
-        city:city,
-        skills:skills,
-        educations:educations,
-        experances:experances,
-        languages:languages
+        fullName: fullName,
+        jobTitle: infoJobTitle,
+        email: email,
+        phoneNumber: phoneNumber,
+        city: city,
+        skills: skills,
+        educations: educations,
+        experances: experances,
+        languages: languages
     }
     return CVData;
 }
@@ -155,6 +155,11 @@ function formSubmit(e) {
         errUl.innerHTML += "<li style='color:red'>" + err[index] + "</li>"
     }
 
+    // save data in local storage
+    if (!err.length) {
+        localStorage.setItem("cvData", JSON.stringify(getFormElementsData()));
+    }
+    
     err = [];
 }
 
