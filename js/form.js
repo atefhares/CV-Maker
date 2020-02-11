@@ -4,9 +4,21 @@ var errClass = document.getElementsByClassName("errors")[0];
 var errUl = document.getElementById("error-messages");
 var summit = document.getElementById("saveForm");
 var addSkill = document.getElementById("addSkill");
+var addExperance = document.getElementById("addExperance");
 
 summit.addEventListener("click", formSubmit);
 addSkill.addEventListener("click", addNewSkill);
+addExperance.addEventListener("click", addNewEX);
+
+function setEmpty(parent) {
+    var inputs = parent.getElementsByTagName("input");
+    [].slice.call(inputs).forEach(input => {
+        input.value = ''
+    });
+    if (parent.getElementsByTagName("textarea")[0]) {
+        parent.getElementsByTagName("textarea")[0].value = '';
+    }
+}
 
 function addNewSkill(e) {
     e.preventDefault();
@@ -16,6 +28,16 @@ function addNewSkill(e) {
     newSkill.getElementsByClassName("skillInput")[0].value = ''
     parent.appendChild(document.createElement("hr"));
     parent.appendChild(newSkill);
+}
+
+function addNewEX(e) {
+    e.preventDefault();
+    var parent = document.getElementsByClassName("experances-container")[0];
+    var experance = document.getElementsByClassName("experance")[0];
+    var newExperance = experance.cloneNode(true);
+    setEmpty(parent);
+    parent.appendChild(document.createElement("hr"));
+    parent.appendChild(newExperance);
 }
 
 function formSubmit(e) {
