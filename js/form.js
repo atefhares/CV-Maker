@@ -78,7 +78,7 @@ function getFormElementsData() {
     var email = document.getElementById("email").value;
     var phoneNumber = document.getElementById("phoneNumber").value;
     var city = document.getElementById("city").value;
-
+    var summary = document.getElementById("summary").value;
     // skills
     [].slice.call(skillsNodes).forEach(skill => {
         if (skill.getElementsByClassName("skillInput")[0].value) {
@@ -130,6 +130,7 @@ function getFormElementsData() {
         email: email,
         phoneNumber: phoneNumber,
         city: city,
+        summary:summary,
         skills: skills,
         educations: educations,
         experances: experances,
@@ -159,7 +160,7 @@ function formSubmit(e) {
     if (!err.length) {
         localStorage.setItem("cvData", JSON.stringify(getFormElementsData()));
     }
-    
+
     err = [];
 }
 
