@@ -3,8 +3,20 @@ var cashederr = [];
 var errClass = document.getElementsByClassName("errors")[0];
 var errUl = document.getElementById("error-messages");
 var summit = document.getElementById("saveForm");
+var addSkill = document.getElementById("addSkill");
 
 summit.addEventListener("click", formSubmit);
+addSkill.addEventListener("click", addNewSkill);
+
+function addNewSkill(e) {
+    e.preventDefault();
+    var parent = document.getElementsByClassName("skills-container")[0];
+    var skill = document.getElementsByClassName("skill")[0];
+    var newSkill = skill.cloneNode(true);
+    newSkill.getElementsByClassName("skillInput")[0].value = ''
+    parent.appendChild(document.createElement("hr"));
+    parent.appendChild(newSkill);
+}
 
 function formSubmit(e) {
     e.preventDefault();
