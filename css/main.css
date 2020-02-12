@@ -132,13 +132,6 @@ iframe {
     color: #999999;
 }
 
-.error-message {
-    font-family: OpenSans-Regular;
-    font-size: 16px;
-    line-height: 1.4;
-    color: #ff0042;
-}
-
 .txt2 {
     font-family: OpenSans-Regular;
     font-size: 15px;
@@ -448,4 +441,9 @@ input.input100 {
 #switchForm {
     color: #4272d7;
     text-decoration: underline;
+}
+
+.error-text {
+    padding: 100px;
+    color: #d72539;
 }
