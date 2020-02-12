@@ -1,0 +1,92 @@
+<!--
+  ~ Copyright (c)  2020, Atef Hares - Information Technology Institute (ITI).
+  ~ Licensed under GNU General Public License v3.0
+  ~
+  ~ https://www.gnu.org/licenses/gpl-3.0.en.html
+  ~
+  ~ Permissions of this strong copyleft license are conditioned on making available complete
+  ~ source code of licensed works and modifications, which include larger works using a
+  ~ licensed work, under the same license. Copyright and license notices must be preserved.
+  ~ Contributors provide an express grant of patent rights.
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CV Maker</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+</head>
+<body>
+
+<div class="limiter">
+	<div class="container-login100">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+			<form class="login100-form">
+					<span id="formHeader" class="login100-form-title p-b-33">
+						Account Login
+					</span>
+
+				<div id="fullNameDiv" class="wrap-input100 validate-input" data-validate="Valid Full Name is required: John Smith" style="display:none">
+					<input id="nameIF" class="input100" type="text" placeholder="Full Name">
+					<span class="focus-input100-1"></span>
+					<span class="focus-input100-2"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+					<input id="emailIF" class="input100" type="text" placeholder="Email">
+					<span class="focus-input100-1"></span>
+					<span class="focus-input100-2"></span>
+				</div>
+
+				<div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
+					<input id="passwordIF" class="input100" type="password" placeholder="Password">
+					<span class="focus-input100-1"></span>
+					<span class="focus-input100-2"></span>
+				</div>
+
+				<div id="confirmPasswordDiv" class="wrap-input100 rs1 validate-input"
+					 data-validate="Password does not match" style="display:none">
+					<input id="confirmPasswordIF" class="input100" type="password" placeholder="Confirm Password">
+					<span class="focus-input100-1"></span>
+					<span class="focus-input100-2"></span>
+				</div>
+
+				<div class="container-login100-form-btn m-t-20">
+					<button id="actionBtn" class="login100-form-btn">
+						Sign in
+					</button>
+				</div>
+
+				<div class="text-center">
+					<span id="switchFormLabel" class="txt1">
+							Create an account?
+					</span>
+
+					<button id="switchForm" class="txt2 hov1">
+						Sign up
+					</button>
+				</div>
+
+				<div id="errorLabelDiv" class="text-center" style="display:none">
+					<span id="errorLabel" class="error-text">
+						Create an account?
+					</span>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>
+
+</body>
+
+<footer>
+	<script src="js/index.js" type="module"></script>
+</footer>
+</html>
