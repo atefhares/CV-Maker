@@ -87,6 +87,12 @@ function onActionBtnClicked(e) {
 
         let currentUser = new User(name, email, password);
         localStorage.setItem(email, JSON.stringify(currentUser));
+
+        nameIF.value = "";
+        emailIF.value = "";
+        passwordIF.value = "";
+        confirmPasswordIF.value = "";
+        
         // todo: move to home page
     }
 
@@ -125,6 +131,7 @@ function onSwitchFormClicked(e) {
         actionBtn.innerText = "Sign IN"
     }
 
+    nameIF.value = "";
     emailIF.value = "";
     passwordIF.value = "";
     confirmPasswordIF.value = "";
