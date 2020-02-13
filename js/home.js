@@ -16,6 +16,8 @@ let authBtnsGroup = document.getElementById("authBtnsGroup");
 let userGroup = document.getElementById("userGroup");
 let username = document.getElementById("username");
 let logout = document.getElementById("logout");
+let createCV = document.getElementById("createCV");
+
 //---------------------------------------------------------------------------------------------------------
 let isUserLoggedIn = false;
 let currentLoggedInUser = JSON.parse(localStorage.getItem(localStorage.getItem("currentLoggedInUserId")));
@@ -41,10 +43,12 @@ if (!isUserLoggedIn) {
     signUpBtn.addEventListener("click", onSignUpBtnClicked);
 
     userGroup.style.display = "none";
+    createCV.style.display = "none";
 
 } else {
     authBtnsGroup.style.display = "none";
     userGroup.style.display = "block";
+    createCV.style.display = "block";
     username.innerHTML = '<span class=\"glyphicon glyphicon-user\"></span> ' + currentLoggedInUser.name;
 
     function onLogOutBtnClicked() {
