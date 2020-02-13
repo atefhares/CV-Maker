@@ -116,6 +116,28 @@ abbr[data-original-title] {
     -webkit-text-decoration-skip-ink: none;
     text-decoration-skip-ink: none
 }
+.print {
+	box-shadow: 0px 0px 0px 2px rgb(255, 159, 137);
+	background:linear-gradient(to bottom, #FF5733 5%, rgb(252, 119, 89) 100%);
+	background-color:#FF5733;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:9px 42px;
+	text-decoration:none;
+	text-shadow:0px 1px 4px #FF5733;
+}
+.print:hover {
+	background:linear-gradient(to bottom, #FF5733 5%, #FF5733 100%);
+	background-color:#FF5733;
+}
+.print:active {
+	position:relative;
+	top:1px;
+}
 
 address {
     margin-bottom: 1rem;
