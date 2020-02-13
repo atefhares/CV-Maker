@@ -70,7 +70,9 @@ function onActionBtnClicked(e) {
         if (retrievedObject !== null) {
             if (retrievedObject.pass === password) {
                 console.log("SignedIN!");
-                // todo: move to home page
+                // set current loggedIn user id
+                localStorage.setItem("currentLoggedInUserId", email);
+                window.location.href = "Home.html";
             } else {
                 showErrorMessage("Wrong email or password!")
             }
@@ -79,7 +81,7 @@ function onActionBtnClicked(e) {
         }
     } else {
         let confirmPassword = confirmPasswordIF.value;
-
+        let name = nameIF.value;
 
         if (password !== confirmPassword) {
             showValidate(confirmPasswordIF);
@@ -87,14 +89,14 @@ function onActionBtnClicked(e) {
         }
 
         let currentUser = new User(name, email, password);
-        localStorage.setItem(email, JSON.stringify(currentUser));
 
-        nameIF.value = "";
-        emailIF.value = "";
-        passwordIF.value = "";
-        confirmPasswordIF.value = "";
+        // save user on local storage
+        localStorage.setItem(currentUser.email, JSON.stringify(currentUser));
 
-        // todo: move to home page
+        // set current loggedIn user id
+        localStorage.setItem("currentLoggedInUserId", currentUser.email);
+
+        window.location.href = "Home.html";
     }
 
 
@@ -138,13 +140,13 @@ function buildAuthForm() {
 
 function onSwitchFormClicked(e) {
     e.preventDefault();
-
     isLogin = !isLogin;
-
     clearFields();
-
     buildAuthForm();
+}
 
+function onPageUnload() {
+    localStorage.removeItem("isLogin");
 }
 
 //---------------------------------------------------------------------------------------------------------
@@ -163,6 +165,7 @@ confirmPasswordIF.addEventListener("focus", ev => {
 nameIF.addEventListener("focus", ev => {
     hideValidate(nameIF)
 });
+window.addEventListener("unload", onPageUnload);
 
 //---------------------------------------------------------------------------------------------------------
 
@@ -175,4 +178,8 @@ function sha512(str) {
 //---------------------------------------------------------------------------------------------------------
 let isLogin = localStorage.getItem("isLogin") === "true";
 console.log("isLogin: " + isLogin);
+
 buildAuthForm();
+
+
+
