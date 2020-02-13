@@ -27,7 +27,7 @@
                         <h3 class="col-12 header">Contact Information</h3 class="col-12">
 
                         <input type="text" class="form-control  m-1" id="fullName" placeholder="Enter Your Full Name"
-                            name="fullName" >
+                            name="fullName">
 
                         <input type="text" class="form-control  m-1" id="infoJobTitle"
                             placeholder="Enter Your Job Title" name="infoJobTitle">
@@ -53,8 +53,8 @@
                         <div class="interests-container col">
                             <div class="interest col m-1">
                                 <div class="row">
-                                    <input type="text" class="form-control col m-1 interestInput" placeholder="Interest Name"
-                                        name="interestName">
+                                    <input type="text" class="form-control col m-1 interestInput"
+                                        placeholder="Interest Name" name="interestName">
                                 </div>
                             </div>
                         </div>
@@ -173,15 +173,17 @@
                     <!-- languages -->
                     <div class="form-group row languages">
                         <h3 class="col-12 header">Languages</h3>
-                        <div class="col">
-                            <input type="checkbox" name="language" value="English" class="checkbox"> English
+                        <div class="languages-container col">
+                            <div class="language col m-1">
+                                <div class="row">
+                                    <input type="text" class="form-control col m-1 languageInput"
+                                        placeholder="Language Name" name="languageName">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <input type="checkbox" name="language" value="Arabic" class="checkbox col-2"> Arabic
-                        </div>
-                        <div class="col">
-                            <input type="checkbox" name="language" value="Frensh" class="checkbox col-2"> Frensh
-                        </div>
+                        <div class="col-12"></div>
+                        <!-- add new language -->
+                        <button class="btn  m-1 my-btn" id="addLanguage">Add Language</button>
                     </div>
 
                     <!-- end languages -->

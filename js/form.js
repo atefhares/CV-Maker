@@ -9,13 +9,14 @@ var addSkill = document.getElementById("addSkill");
 var addInterest = document.getElementById("addInterest");
 var addExperance = document.getElementById("addExperance");
 var addEducation = document.getElementById("addEducation");
+var addLanguage = document.getElementById("addLanguage");
 
 // get all form sections
 var skillsNodes = document.getElementsByClassName("skill");
 var InterestsNodes = document.getElementsByClassName("interest");
 var experanceNodes = document.getElementsByClassName("experance");
 var educationNodes = document.getElementsByClassName("education");
-var languagesNodes = document.getElementsByClassName("checkbox");
+var languagesNodes = document.getElementsByClassName("language");
 
 // arrays to save all sections data to add them in local storage
 var skills = [];
@@ -30,6 +31,7 @@ addSkill.addEventListener("click", addNewSkill);
 addInterest.addEventListener("click", addNewInterest);
 addExperance.addEventListener("click", addNewEX);
 addEducation.addEventListener("click", addNewEducation);
+addLanguage.addEventListener("click", addNewLang);
 
 function setEmpty(parent) {
     var inputs = parent.getElementsByTagName("input");
@@ -52,7 +54,7 @@ function addNewSkill(e) {
     parent.appendChild(newSkill);
 }
 
-// function to add new skill Section
+// function to add new Interest Section
 function addNewInterest(e) {
     e.preventDefault();
     var parent = document.getElementsByClassName("interests-container")[0];
@@ -83,6 +85,17 @@ function addNewEducation(e) {
     setEmpty(parent);
     parent.appendChild(document.createElement("hr"));
     parent.appendChild(newEducation);
+}
+
+// function to add new Language Section
+function addNewLang(e) {
+    e.preventDefault();
+    var parent = document.getElementsByClassName("languages-container")[0];
+    var language = document.getElementsByClassName("language")[0];
+    var newLanguage = language.cloneNode(true);
+    newLanguage.getElementsByClassName("languageInput")[0].value = ''
+    parent.appendChild(document.createElement("hr"));
+    parent.appendChild(newLanguage);
 }
 
 function getFormElementsData() {
@@ -143,9 +156,18 @@ function getFormElementsData() {
     });
 
     //languages
-    [].slice.call(languagesNodes).forEach(lang => {
-        if (lang.checked) {
-            languages.push(lang.value)
+    // [].slice.call(languagesNodes).forEach(lang => {
+    //     if (lang.checked) {
+    //         languages.push(lang.value)
+    //     }
+    // });
+
+    [].slice.call(languagesNodes).forEach( language => {
+        if (language.getElementsByClassName("languageInput")[0].value) {
+            var newLanguage = {
+                name: language.getElementsByClassName("languageInput")[0].value
+            }
+            languages.push(newLanguage);
         }
     });
 
@@ -173,7 +195,7 @@ function formSubmit(e) {
     validateEmail();
     validatePhoneNumber();
     validateSkill();
-    checkLanguage();
+    // checkLanguage();
     if (err.length > 0) {
         errClass.style.display = "block";
     }
