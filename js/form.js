@@ -185,6 +185,7 @@ function formSubmit(e) {
     // save data in local storage
     if (!err.length) {
         localStorage.setItem("cvData", JSON.stringify(getFormElementsData()));
+        location.replace("Home.html")
     }
 
     err = [];
