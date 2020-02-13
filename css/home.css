@@ -1,3 +1,6 @@
+html {
+	scroll-behavior: smooth;
+  }
 /* start the navigation bar */
 /* all the comming code just edit on the bootstrap classes */
 .navbar {
@@ -37,7 +40,11 @@
 }
 
 .navbar-brand {
+<<<<<<< HEAD
     font-size: 35px; /* this is for larger font */
+=======
+	font-size: 40px; /* this is for larger font */
+>>>>>>> form
 }
 
 .my-span {
@@ -171,3 +178,187 @@
 
 /* end the header */
 
+/* Start Contacts */
+.conatcts{
+    background-color: #252f31;
+    margin-top: 30px;
+}
+
+.conatcts .container .content p{
+    color: #797979;
+}    
+
+
+form{
+    color: white;
+    text-align: left;
+    padding-top: 50px;
+}
+form input::placeholder,
+form textarea::placeholder{
+	color: tomato;
+}
+form input,
+form textarea{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #4b5557;
+    border: none;
+
+    font-size: 16px;    
+    color: white;
+    box-shadow: 0 0 10px #f5f5f5;    
+    transition: 0.3s ease-in-out;
+}
+
+form input:hover,
+form textarea:hover{
+    box-shadow: -5px 0 tomato;
+}
+
+form textarea{
+    height: 300px;
+    text-align: left;
+}
+
+form .myBtn{
+    background-color: white;
+    color: tomato;   
+	border-color: tomato;
+}
+form .myBtn:hover{
+    background-color: tomato;
+	color: white;
+}    
+/* End Contacts */
+
+/* Start Footer */
+
+footer{
+    padding: 10px;
+    text-align: center;
+    background-color: #191e22;
+    color: #797979;
+}
+
+footer h6{
+    padding: 10px;
+    margin: 10px auto;
+}
+
+footer .container h6 span{
+    color: tomato;
+}
+
+footer .container ul{
+    list-style: none;
+    text-align: center;
+}    
+
+footer .container ul li{
+    display: inline-block;
+    margin: 10px;
+}    
+
+footer ul li i{
+    transition: 0.3s ease-in-out;
+}
+
+footer ul li i:hover{
+    transform: scale(1.2,1.2);
+    text-shadow: 0 10px 2px #8B8B8B;
+}    
+
+/* End Footer */
+
+/* my frame work */
+.special-heading{
+	position: relative;
+	font-weight: normal;
+	/* font-size: 3vw; */
+	margin-bottom: 20PX;
+	margin-left: 5px;
+	padding-left: 0px;
+	color: tomato;
+}
+
+.special-heading:after{
+	content: "";
+	display: block;
+	position: absolute;
+	margin-top: 10px;
+	width: 6%;
+	border-bottom: 3px solid tomato;
+}
+
+.card img{
+	margin-bottom: 30px;
+	cursor: pointer;
+    border-radius: 5%;
+    box-shadow: 0 0 6px tomato;
+}
+
+.card .overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: .0;
+	transition: .5s ease;
+	background-color: #fff;
+}
+
+.card:hover .overlay {
+	opacity: .8;
+}
+
+.card .text {
+	color: tomato;
+	font-size: 2vw;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+@media (max-width: 767px){
+	.card .text{
+		font-size: 7vw;
+	}
+	.head-img{
+		display: none;
+	}
+}
+
+@media (max-width: 1024px){
+	.head-img{
+		display: none;
+	}
+}
+
+/* nice scroll */
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+	border-radius: 5px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: tomato; 
+	border-radius: 2px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: tomato; 
+}
