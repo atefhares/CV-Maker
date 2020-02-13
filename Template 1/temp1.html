@@ -5,14 +5,6 @@
 	
 	<!-- Meta -->
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
-	<link rel="shortcut icon" href="css/favicon.ico"> 
-	
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 	
 	<!-- FontAwesome JS-->
 	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
@@ -49,8 +41,8 @@
 				<div class="resume-intro py-3">
 					<div class="media flex-column flex-md-row align-items-center" >
 						<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="" alt="">
-						<div class="media-body text-left">
-							<p class="mb-0"></p>
+						<div class="media-body text-left" >
+							<i id="summary"></i>
 						</div><!--//media-body-->
 					</div>
 				</div><!--//resume-intro-->
@@ -77,9 +69,11 @@
 								<h3 class="text-uppercase resume-section-heading mb-4">Skills</h3>
 								<div class="item">
 									
-									<ul class="list-unstyled resume-skills-list" id="skills">
+									<ul class="list-unstyled resume-skills-list" id="skills" style="float: left;">
 										<!-- <li>JavaScript</li> -->
-										
+									</ul>
+									<ul class="list-unstyled resume-skills-list" id="levelskill" style="padding-left: 130px;">
+										<!-- <li>JavaScript</li> -->
 									</ul>
 									</div><!--//item-->
 									
@@ -103,10 +97,10 @@
 											
 										</ul>
 									</section><!--//certificates-section-->
-									<section class="skills-section py-3" hidden>
+									<section class="skills-section py-3" >
 										<h3 class="text-uppercase resume-section-heading mb-4">Interests</h3>
-										<ul class="list-unstyled resume-interests-list mb-0">
-											<li class="mb-2">Climbing</li>
+										<ul class="list-unstyled resume-interests-list mb-0" id="Interests">
+											
 											
 										</ul>
 									</section><!--//certificates-section-->
@@ -122,12 +116,20 @@
 				
 				<footer class="footer text-center py-4">
 					<!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+					<h4>
+						
+						<button class="print" id="print" value="Generate PDF";color: seashell;"> Print Your CV </button><br>
+						
+					</h4>
+					
 					<small class="copyright">Designed with <i class="fas fa-heart"></i> by Boys</small>
 				</footer>
 				
 			</div><!--//main-wrapper-->
 			
 			<script src="temp1.js"></script>
+			
+			
 </body>
 </html> 
 
