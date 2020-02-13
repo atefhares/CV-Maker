@@ -12,6 +12,7 @@
 
 import User from './User.js'
 
+//---------------------------------------------------------------------------------------------------------
 
 let actionBtn = document.getElementById("actionBtn");
 let nameIF = document.getElementById("nameIF");
@@ -26,8 +27,8 @@ let errorLabel = document.getElementById("errorLabel");
 let errorLabelDiv = document.getElementById("errorLabelDiv");
 let fullNameDiv = document.getElementById("fullNameDiv");
 
+//---------------------------------------------------------------------------------------------------------
 
-let isLogin = true;
 
 function showErrorMessage(text) {
     errorLabelDiv.style.display = "block";
@@ -92,7 +93,7 @@ function onActionBtnClicked(e) {
         emailIF.value = "";
         passwordIF.value = "";
         confirmPasswordIF.value = "";
-        
+
         // todo: move to home page
     }
 
@@ -110,11 +111,14 @@ function hideValidate(input) {
     hideErrorMessage();
 }
 
-function onSwitchFormClicked(e) {
-    e.preventDefault();
+function clearFields() {
+    nameIF.value = "";
+    emailIF.value = "";
+    passwordIF.value = "";
+    confirmPasswordIF.value = "";
+}
 
-    isLogin = !isLogin;
-
+function buildAuthForm() {
     if (!isLogin) {
         fullNameDiv.style.display = "block";
         confirmPasswordDiv.style.display = "block";
@@ -130,12 +134,20 @@ function onSwitchFormClicked(e) {
         formHeader.innerText = "Account Login";
         actionBtn.innerText = "Sign IN"
     }
-
-    nameIF.value = "";
-    emailIF.value = "";
-    passwordIF.value = "";
-    confirmPasswordIF.value = "";
 }
+
+function onSwitchFormClicked(e) {
+    e.preventDefault();
+
+    isLogin = !isLogin;
+
+    clearFields();
+
+    buildAuthForm();
+
+}
+
+//---------------------------------------------------------------------------------------------------------
 
 actionBtn.addEventListener("click", onActionBtnClicked);
 switchForm.addEventListener("click", onSwitchFormClicked);
@@ -153,8 +165,14 @@ nameIF.addEventListener("focus", ev => {
 });
 
 //---------------------------------------------------------------------------------------------------------
+
 function sha512(str) {
     return crypto.subtle.digest("SHA-512", new TextEncoder("utf-8").encode(str)).then(buf => {
         return Array.prototype.map.call(new Uint8Array(buf), x => (('00' + x.toString(16)).slice(-2))).join('');
     });
 }
+
+//---------------------------------------------------------------------------------------------------------
+let isLogin = localStorage.getItem("isLogin") === "true";
+console.log("isLogin: " + isLogin);
+buildAuthForm();
