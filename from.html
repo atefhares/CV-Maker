@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrab 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/form.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="mt-5 d-flex justify-content-center">Curriculum Vitae</h2>
+                <form>
+
+                    <!-- contact Information -->
+                    <div class="form-group row">
+                        <h3 class="col-12 header">Contact Information</h3 class="col-12">
+
+                        <input type="text" class="form-control  m-1" id="fullName" placeholder="Enter Your Full Name"
+                            name="fullName">
+
+                        <input type="text" class="form-control  m-1" id="infoJobTitle"
+                            placeholder="Enter Your Job Title" name="infoJobTitle">
+
+                        <input type="email" class="form-control col m-1" id="email" placeholder="Email:xx@xx.xx"
+                            name="email">
+
+                        <input type="tel" class="form-control col m-1" id="phoneNumber"
+                            placeholder="Phone Number:+02 011 111 1111" name="phoneNumber">
+
+                        <input type="text" class="form-control col m-1" id="city" placeholder="City:New Work, USA"
+                            name="city">
+                        <!-- job description -->
+                        <textarea name="summary" class="col-12 summary" id="summary" rows="5"
+                            placeholder="Summary"></textarea>
+                        <!-- end job description -->
+                    </div>
+                    <!-- End contact Information -->
+
+                    <!-- Interests -->
+                    <div class="form-group row interests">
+                        <h3 class="col-12 header">Interests</h3>
+                        <div class="interests-container col">
+                            <div class="interest col m-1">
+                                <div class="row">
+                                    <input type="text" class="form-control col m-1 interestInput" placeholder="Interest Name"
+                                        name="interestName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"></div>
+                        <!-- add new interest -->
+                        <button class="btn  m-1 my-btn" id="addInterest">Add Interest</button>
+                    </div>
+                    <!-- End interest -->
+
+                    <!-- Skills -->
+                    <div class="form-group row skills">
+                        <h3 class="col-12 header">Skills</h3>
+                        <div class="skills-container col">
+                            <div class="skill col m-1">
+                                <div class="row">
+                                    <input type="text" class="form-control col m-1 skillInput" placeholder="Skill Name"
+                                        name="skillName">
+                                    <select name="level" class="col-3 btn  my-btn-select">
+                                        <option value="good">Good</option>
+                                        <option value="veryGood">Very Good</option>
+                                        <option value="excellent">Excellent</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"></div>
+                        <!-- add new skill -->
+                        <button class="btn  m-1 my-btn" id="addSkill">Add Skill</button>
+                    </div>
+                    <!-- End skills -->
+
+                    <!-- work experance -->
+                    <div class="form-group   row work_experances">
+                        <h3 class="col-12 header">Work Experance</h3>
+                        <div class="experances-container col">
+                            <div class="experance col m-2">
+                                <div class="row">
+                                    <!-- company name -->
+                                    <input type="text" class="form-control col m-1 companyName" id="companyName"
+                                        placeholder="Company Name" name="companyName">
+                                    <!-- end company name -->
+
+                                    <!-- job title -->
+                                    <input type="text" class="form-control col m-1 jobTitle" id="jobTitle"
+                                        placeholder="Job Title" name="jobTitle">
+                                    <!-- end job title -->
+                                    <div class="col-12"></div>
+                                    <!-- job Date -->
+                                    <label for="startDate" class="pt-2">Start date</label>
+                                    <input type="date" class="form-control  m-1 col startDate" name="startDate"
+                                        id="startDate">
+
+                                    <!-- to present -->
+                                    <!-- <label class="form-check-label m-1 pt-2 col">
+                            <input class="form-check-input" type="checkbox" name="remember"> Present
+                        </label> -->
+
+                                    <label for="endDate" class="pt-2">End date</label>
+                                    <input type="date" class="form-control  m-1 col endDate" name="endDate"
+                                        id="endDate">
+                                    <!-- end job Date -->
+
+                                    <!-- job description -->
+                                    <textarea name="description" class="col-12 description" id="description" rows="5"
+                                        placeholder="Type Your Job Description"></textarea>
+                                    <!-- end job description -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12"></div>
+                        <!-- add new work experance -->
+                        <button class="btn  m-1 my-btn" id="addExperance">Add Experance</button>
+                    </div>
+                    <!-- end work experance -->
+
+                    <!-- Education -->
+                    <div class="form-group row educations">
+                        <h3 class="col-12 header">Education</h3>
+                        <div class="educations-container col m-2">
+                            <div class="education col">
+                                <div class="row">
+                                    <!-- school name -->
+                                    <input type="text" class="form-control m-1 schoolName" id="schoolName"
+                                        placeholder="School Name" name="schoolName">
+                                    <!-- end school name -->
+
+                                    <!-- education degree -->
+                                    <input type="text" class="form-control  m-1 educationDegree" id="educationDegree"
+                                        placeholder="Education Degree" name="educationDegree">
+                                    <!-- end job title -->
+
+                                    <!-- education Date -->
+                                    <label for="startDate" class="pt-2">From</label>
+                                    <input type="date" class="form-control  m-1 col startDate" name="startDate"
+                                        id="startDate">
+
+                                    <!-- to present -->
+                                    <!-- <label class="form-check-label m-1 pt-2 col">
+                                                <input class="form-check-input" type="checkbox" name="remember"> Present
+                                            </label> -->
+
+                                    <label for="endDate" class="pt-2">To</label>
+                                    <input type="date" class="form-control  m-1 col endDate" name="endDate"
+                                        id="endDate">
+                                    <!-- end education Date -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12"></div>
+                        <!-- add new education -->
+                        <button class="btn  m-1 my-btn" id="addEducation">Add Education</button>
+                    </div>
+                    <!-- end Education -->
+
+                    <!-- languages -->
+                    <div class="form-group row languages">
+                        <h3 class="col-12 header">Languages</h3>
+                        <div class="col">
+                            <input type="checkbox" name="language" value="English" class="checkbox"> English
+                        </div>
+                        <div class="col">
+                            <input type="checkbox" name="language" value="Arabic" class="checkbox col-2"> Arabic
+                        </div>
+                        <div class="col">
+                            <input type="checkbox" name="language" value="Frensh" class="checkbox col-2"> Frensh
+                        </div>
+                    </div>
+
+                    <!-- end languages -->
+                    <ul class="errors" style='display:none'>
+                        <ul id='error-messages'>
+                        </ul>
+                    </ul>
+                    <button type="submit" class="btn my-btn my-btn-sp" id="saveForm">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/form.js"></script>
+</body>
+
+</html>
