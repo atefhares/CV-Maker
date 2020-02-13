@@ -6,17 +6,20 @@ var errUl = document.getElementById("error-messages");
 // get all buttons
 var summit = document.getElementById("saveForm");
 var addSkill = document.getElementById("addSkill");
+var addInterest = document.getElementById("addInterest");
 var addExperance = document.getElementById("addExperance");
 var addEducation = document.getElementById("addEducation");
 
 // get all form sections
 var skillsNodes = document.getElementsByClassName("skill");
+var InterestsNodes = document.getElementsByClassName("interest");
 var experanceNodes = document.getElementsByClassName("experance");
 var educationNodes = document.getElementsByClassName("education");
 var languagesNodes = document.getElementsByClassName("checkbox");
 
 // arrays to save all sections data to add them in local storage
 var skills = [];
+var interests = [];
 var languages = [];
 var experances = [];
 var educations = [];
@@ -24,6 +27,7 @@ var educations = [];
 // Events
 summit.addEventListener("click", formSubmit);
 addSkill.addEventListener("click", addNewSkill);
+addInterest.addEventListener("click", addNewInterest);
 addExperance.addEventListener("click", addNewEX);
 addEducation.addEventListener("click", addNewEducation);
 
@@ -46,6 +50,17 @@ function addNewSkill(e) {
     newSkill.getElementsByClassName("skillInput")[0].value = ''
     parent.appendChild(document.createElement("hr"));
     parent.appendChild(newSkill);
+}
+
+// function to add new skill Section
+function addNewInterest(e) {
+    e.preventDefault();
+    var parent = document.getElementsByClassName("interests-container")[0];
+    var interest = document.getElementsByClassName("interest")[0];
+    var newInterest = interest.cloneNode(true);
+    newInterest.getElementsByClassName("interestInput")[0].value = ''
+    parent.appendChild(document.createElement("hr"));
+    parent.appendChild(newInterest);
 }
 
 // function to add new experance Section
@@ -90,6 +105,16 @@ function getFormElementsData() {
         }
     });
 
+    // interests
+    [].slice.call(InterestsNodes).forEach( interest => {
+        if (interest.getElementsByClassName("interestInput")[0].value) {
+            var newInterest = {
+                name: interest.getElementsByClassName("interestInput")[0].value
+            }
+            interests.push(newInterest);
+        }
+    });
+
     // work_experance
     [].slice.call(experanceNodes).forEach(experance => {
         if (experance.getElementsByClassName("companyName")[0].value) {
@@ -130,8 +155,9 @@ function getFormElementsData() {
         email: email,
         phoneNumber: phoneNumber,
         city: city,
-        summary:summary,
+        summary: summary,
         skills: skills,
+        interests: interests,
         educations: educations,
         experances: experances,
         languages: languages
