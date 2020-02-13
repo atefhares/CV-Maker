@@ -40,11 +40,7 @@ html {
 }
 
 .navbar-brand {
-<<<<<<< HEAD
-    font-size: 35px; /* this is for larger font */
-=======
 	font-size: 40px; /* this is for larger font */
->>>>>>> form
 }
 
 .my-span {
@@ -295,7 +291,8 @@ footer ul li i:hover{
 
 .card img{
 	margin-bottom: 30px;
-	cursor: pointer;
+    cursor: pointer;
+    height: 500px ;
     border-radius: 5%;
     box-shadow: 0 0 6px tomato;
 }
