@@ -80,23 +80,31 @@ function onActionBtnClicked(e) {
             showErrorMessage("Not registered!")
         }
     } else {
-        let confirmPassword = confirmPasswordIF.value;
-        let name = nameIF.value;
+        let retrievedObject = JSON.parse(localStorage.getItem(email));
+        if (retrievedObject !== null) {
+            if (confirm("Already registered, SignIn instead?") === true) {
+                onSwitchFormClicked()
+            }
+        } else {
+            let confirmPassword = confirmPasswordIF.value;
+            let name = nameIF.value;
 
-        if (password !== confirmPassword) {
-            showValidate(confirmPasswordIF);
-            return;
+            if (password !== confirmPassword) {
+                showValidate(confirmPasswordIF);
+                return;
+            }
+
+            let currentUser = new User(name, email, password);
+
+            // save user on local storage
+            localStorage.setItem(currentUser.email, JSON.stringify(currentUser));
+
+            // set current loggedIn user id
+            localStorage.setItem("currentLoggedInUserId", currentUser.email);
+
+            window.location.href = "Home.html";
         }
 
-        let currentUser = new User(name, email, password);
-
-        // save user on local storage
-        localStorage.setItem(currentUser.email, JSON.stringify(currentUser));
-
-        // set current loggedIn user id
-        localStorage.setItem("currentLoggedInUserId", currentUser.email);
-
-        window.location.href = "Home.html";
     }
 
 
@@ -139,7 +147,9 @@ function buildAuthForm() {
 }
 
 function onSwitchFormClicked(e) {
-    e.preventDefault();
+    if (e !== undefined)
+        e.preventDefault();
+    
     isLogin = !isLogin;
     clearFields();
     buildAuthForm();
