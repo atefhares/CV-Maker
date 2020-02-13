@@ -72,7 +72,7 @@ function onActionBtnClicked(e) {
                 console.log("SignedIN!");
                 // set current loggedIn user id
                 localStorage.setItem("currentLoggedInUserId", email);
-                window.location.href = "Home.html";
+                window.location.href = "index.html";
             } else {
                 showErrorMessage("Wrong email or password!")
             }
@@ -102,7 +102,7 @@ function onActionBtnClicked(e) {
             // set current loggedIn user id
             localStorage.setItem("currentLoggedInUserId", currentUser.email);
 
-            window.location.href = "Home.html";
+            window.location.href = "index.html";
         }
 
     }
