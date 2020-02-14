@@ -274,7 +274,8 @@ footer ul li i:hover{
 	position: relative;
 	font-weight: normal;
 	/* font-size: 3vw; */
-	margin-bottom: 20PX;
+    margin-bottom: 20PX;
+    margin-top: 70px;
 	margin-left: 5px;
 	padding-left: 0px;
 	color: tomato;

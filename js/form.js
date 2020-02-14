@@ -196,9 +196,7 @@ function formSubmit(e) {
     validatePhoneNumber();
     validateSkill();
     validateInterest();
-   // validateschoolName();
     validatelanguageInput()
-     //checkLanguage();
     if (err.length > 0) {
         errClass.style.display = "block";
     }
@@ -210,7 +208,7 @@ function formSubmit(e) {
     // save data in local storage
     if (!err.length) {
         localStorage.setItem("cvData", JSON.stringify(getFormElementsData()));
-        location.replace("index.html")
+        location.replace("chooseForms.html")
     }
 
     err = [];

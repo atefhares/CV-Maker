@@ -1,0 +1,202 @@
+.navbar {
+    /* this is for shink nav */
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000; /* this is for show the nav front any element */
+    border-radius: unset;
+}
+
+.navbar-inverse {
+    background-color: rgba(255, 255, 255, 0.5); /* white color with low oppacity */
+    border-color: transparent; /* transparent to show what in the back */
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #fff;
+}
+
+.navbar-inverse .navbar-brand {
+    color: tomato;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #000;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+    color: #fff;
+    background-color: tomato;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover {
+    background: tomato;
+}
+
+.navbar-brand {
+	font-size: 40px; /* this is for larger font */
+}
+
+.my-span {
+    background-color: tomato;
+    color: white;
+    border: 1px solid tomato;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 2px;
+}
+
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+    color: tomato;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: tomato;
+}
+
+.dropdown-menu > li > a {
+    color: tomato;
+}
+
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+    color: #fff;
+    background-color: tomato;
+}
+
+/* this is for when hover or focus the link take the general color and the background take the white color  */
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+    color: tomato;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+    color: tomato;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* end the navigation bar */
+
+@media (max-width: 767px) {
+    /* that is media query for the dropdown-menu */
+    .navbar-inverse {
+        background-color: #fff;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+        color: tomato;
+        background-color: white;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover {
+        color: #fff;
+        background-color: tomato;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+        color: #fff;
+        background-color: tomato;
+    }
+
+    .navbar-inverse .navbar-toggle {
+        border-color: #fff;
+        background-color: tomato;
+    }
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: none;
+    border-radius: .25rem;
+}
+
+.card img {
+    margin-bottom: 30px;
+    cursor: pointer;
+    height: 500px;
+    border-radius: 2%;
+    box-shadow: 0 0 6px tomato;
+}
+
+.card .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .0;
+    transition: .5s ease;
+    background-color: #fff;
+}
+
+.card:hover .overlay {
+    opacity: .8;
+}
+
+.card .text {
+    color: tomato;
+    font-size: 2vw;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .card .text {
+        font-size: 7vw;
+    }
+}
+
+/* Start Footer */
+
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #191e22;
+    color: #797979;
+}
+
+footer h6 {
+    padding: 10px;
+    margin: 10px auto;
+}
+
+footer .container h6 span {
+    color: tomato;
+}
+
+footer .container ul {
+    list-style: none;
+    text-align: center;
+}
+
+footer .container ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+footer ul li i {
+    transition: 0.3s ease-in-out;
+}
+
+footer ul li i:hover {
+    transform: scale(1.2, 1.2);
+    text-shadow: 0 10px 2px #8B8B8B;
+}
+
+/* End Footer */
