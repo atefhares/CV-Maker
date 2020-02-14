@@ -8,5 +8,6 @@
 
 
 A website to build your own CV using exiting templates.
+This implementation was done as the javascript project @ ITI intake 40 by students of the open source cloud platform development track.
 
 demo: https://atefhares.github.io/CV-Maker/
