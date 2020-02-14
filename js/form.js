@@ -195,7 +195,10 @@ function formSubmit(e) {
     validateEmail();
     validatePhoneNumber();
     validateSkill();
-    // checkLanguage();
+    validateInterest();
+   // validateschoolName();
+    validatelanguageInput()
+     //checkLanguage();
     if (err.length > 0) {
         errClass.style.display = "block";
     }
@@ -216,42 +219,73 @@ function formSubmit(e) {
 function validateName() {
     var input = document.getElementById("fullName");
     if (input.value === "") {
-        err.push("plz, Enter ur name");
+        err.push("Please, Enter Your name");
     }
 }
 
 function validateInfoJobTitle() {
     var input = document.getElementById("infoJobTitle");
     if (input.value === "") {
-        err.push("plz, Enter ur Job Title");
+        err.push("Please, Enter Your Job Title");
     }
 }
 
 function validateEmail() {
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var input = document.getElementById("email");
     if (input.value === "") {
-        err.push("plz, Enter ur email");
+        err.push("Please, Enter Your email");
+    }
+    else if(! input.value.match(mailformat))
+    {
+        alert("You have entered an invalid email address!");
     }
 }
 
 function validatePhoneNumber() {
+    var phoneno = /^\d{11}$/;
     var input = document.getElementById("phoneNumber");
     if (input.value === "") {
-        err.push("plz, Enter ur Phone Number");
+        err.push("Please, Enter Your Phone Number");
+    }
+    else if(! input.value.match(phoneno))
+    {
+        alert("You have entered an invalid Phone Number !");
     }
 }
 
 function validateCity() {
     var input = document.getElementById("city");
     if (input.value === "") {
-        err.push("plz, Enter ur city");
+        err.push("Please, Enter Your city");
     }
 }
 
 function validateSkill() {
     var input = document.getElementsByClassName("skillInput")[0];
     if (input.value === "") {
-        err.push("plz, Enter At least one Skill");
+        err.push("Please, Enter At least one Skill");
+    }
+}
+
+function validateInterest() {
+    var input = document.getElementsByClassName("interestInput")[0];
+    if (input.value === "") {
+        err.push("Please, Enter At least one Interest");
+    }
+}
+
+function validateschoolName() {
+    var input = document.getElementsByClassName("schoolName")[0];
+    if (input.value === "") {
+        err.push("Please, Enter Your schoolName");
+    }
+}
+
+function validatelanguageInput() {
+    var input = document.getElementsByClassName("languageInput")[0];
+    if (input.value === "") {
+        err.push("Please, Enter Your language");
     }
 }
 
@@ -264,6 +298,7 @@ function checkLanguage() {
         }
     }
     if (count == 0) {
-        err.push("plz, choose at least one language");
+        err.push("Please, choose at least one language");
     }
 }
+
