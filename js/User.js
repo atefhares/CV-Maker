@@ -18,6 +18,9 @@ export default class User {
         this.id = this.generateUUID();
     }
 
+    setData(data) {
+        this.data = data;
+    }
 
     generateUUID() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {

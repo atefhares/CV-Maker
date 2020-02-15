@@ -1,3 +1,6 @@
+
+import User from './User.js'
+
 var err = [];
 var cashederr = [];
 var errClass = document.getElementsByClassName("errors")[0];
@@ -119,7 +122,7 @@ function getFormElementsData() {
     });
 
     // interests
-    [].slice.call(InterestsNodes).forEach( interest => {
+    [].slice.call(InterestsNodes).forEach(interest => {
         if (interest.getElementsByClassName("interestInput")[0].value) {
             var newInterest = {
                 name: interest.getElementsByClassName("interestInput")[0].value
@@ -162,7 +165,7 @@ function getFormElementsData() {
     //     }
     // });
 
-    [].slice.call(languagesNodes).forEach( language => {
+    [].slice.call(languagesNodes).forEach(language => {
         if (language.getElementsByClassName("languageInput")[0].value) {
             var newLanguage = {
                 name: language.getElementsByClassName("languageInput")[0].value
@@ -207,7 +210,17 @@ function formSubmit(e) {
 
     // save data in local storage
     if (!err.length) {
-        localStorage.setItem("cvData", JSON.stringify(getFormElementsData()));
+        // get current logged in user email
+        let userEmail = localStorage.getItem("currentLoggedInUserId");
+        console.log("userEmail" + userEmail);
+
+        let currentLoggedInUserObj = Object.assign(new User, JSON.parse(localStorage.getItem(userEmail)));
+
+        console.log(currentLoggedInUserObj);
+        currentLoggedInUserObj.setData(getFormElementsData());
+
+        localStorage.setItem(userEmail, JSON.stringify(currentLoggedInUserObj));
+        // localStorage.setItem("cvData", JSON.stringify(getFormElementsData()));
         location.replace("chooseForms.html")
     }
 
@@ -229,13 +242,11 @@ function validateInfoJobTitle() {
 }
 
 function validateEmail() {
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    // var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var input = document.getElementById("email");
     if (input.value === "") {
         err.push("Please, Enter Your email");
-    }
-    else if(! input.value.match(mailformat))
-    {
+    } else if (!input.value.match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/)) {
         err.push("You have entered an invalid email address!");
     }
 }
@@ -245,9 +256,7 @@ function validatePhoneNumber() {
     var input = document.getElementById("phoneNumber");
     if (input.value === "") {
         err.push("Please, Enter Your Phone Number");
-    }
-    else if(! input.value.match(phoneno))
-    {
+    } else if (!input.value.match(phoneno)) {
         err.push("You have entered an invalid Phone Number !");
     }
 }
