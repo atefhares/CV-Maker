@@ -68,8 +68,7 @@ for(var i=0;i<Interestsarr.length;i++){
 var education=document.getElementById("education");
 var educationarr= cvData.educations;
 if(educationarr.length == 0){
-    document.getElementById('education').style.display = 'none'
-}
+    document.getElementsByClassName('education-section')[0].style.display = 'none';}
 for(var i=0;i<educationarr.length;i++){
 
     education.innerHTML+=`<h5 style="margin-left:10px;color:#434E5E;font-size:20px;">${educationarr[i].educationDegree}</h5>`;
