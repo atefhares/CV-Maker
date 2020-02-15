@@ -78,7 +78,30 @@ body {
     line-height: 1.5;
     color: #292929;
     text-align: left;
-    background-color: #fff
+    background-color: #fff;
+    word-break: break-all;
+}
+#skills tr td:first-child {
+    width: 120px;
+    padding-right: 21px;
+    word-break: break-all;
+}
+
+#skills tr td:nth-child(2) {
+    color: #54B689;
+    font-weight: bold;
+    word-break: break-all;
+}
+.mail,.add{
+    word-break: break-all;
+}
+.resume-section-heading {
+    position: relative;
+    padding-left: 1rem;
+    font-size: 1.125rem;
+    letter-spacing: 0.15rem;
+    color: #54B689;
+    display: inline-block;
 }
 
 [tabindex="-1"]:focus {
@@ -100,6 +123,10 @@ h6 {
     margin-top: 0;
     margin-bottom: .5rem
 }
+.summary{
+    word-break: break-all;
+}
+
 
 p {
     margin-top: 0;
@@ -128,7 +155,8 @@ abbr[data-original-title] {
 	font-size:19px;
 	padding:9px 42px;
 	text-decoration:none;
-	text-shadow:0px 1px 4px #FF5733;
+    text-shadow:0px 1px 4px #FF5733;
+    border: 0px;
 }
 .print:hover {
 	background:linear-gradient(to bottom, #FF5733 5%, #FF5733 100%);
@@ -878,58 +906,7 @@ pre code {
 .order-3 {
     -webkit-box-ordinal-group: 4;
     -webkit-order: 3;
-    order: 3
-}
-
-.order-4 {
-    -webkit-box-ordinal-group: 5;
-    -webkit-order: 4;
-    order: 4
-}
-
-.order-5 {
-    -webkit-box-ordinal-group: 6;
-    -webkit-order: 5;
-    order: 5
-}
-
-.order-6 {
-    -webkit-box-ordinal-group: 7;
-    -webkit-order: 6;
-    order: 6
-}
-
-.order-7 {
-    -webkit-box-ordinal-group: 8;
-    -webkit-order: 7;
-    order: 7
-}
-
-.order-8 {
-    -webkit-box-ordinal-group: 9;
-    -webkit-order: 8;
-    order: 8
-}
-
-.order-9 {
-    -webkit-box-ordinal-group: 10;
-    -webkit-order: 9;
-    order: 9
-}
-
-.order-10 {
-    -webkit-box-ordinal-group: 11;
-    -webkit-order: 10;
-    order: 10
-}
-
-.order-11 {
-    -webkit-box-ordinal-group: 12;
-    -webkit-order: 11;
-    order: 11
-}
-
-.order-12 {
+    order: 3word-break: break-all;
     -webkit-box-ordinal-group: 13;
     -webkit-order: 12;
     order: 12
@@ -11661,13 +11638,6 @@ a.theme-link:hover {
     border: 1px solid rgba(0, 0, 0, 0.025)
 }
 
-.resume-section-heading {
-    position: relative;
-    padding-left: 1rem;
-    font-size: 1.125rem;
-    letter-spacing: 0.15rem;
-    color: #54B689
-}
 
 .resume-section-heading:before {
     content: "";
@@ -11684,7 +11654,8 @@ a.theme-link:hover {
     font-size: 2.75rem;
     font-weight: 900;
     letter-spacing: 0.4rem;
-    color: #54B689
+    color: #54B689;
+    word-break: break-all;
 }
 
 .resume-tagline {
