@@ -1,4 +1,8 @@
-var cvData = JSON.parse(localStorage.getItem('cvData'));
+import User from "../js/User.js";
+let userEmail = localStorage.getItem("currentLoggedInUserId");
+let currentLoggedInUserObj = Object.assign(new User, JSON.parse(localStorage.getItem(userEmail)));
+var cvData = currentLoggedInUserObj.data;
+
 
 var fname=cvData.fullName;
 document.getElementsByClassName("name")[0].innerHTML = fname;
@@ -17,26 +21,39 @@ var city=cvData.city;
 document.getElementById("add").textContent = city;
 
 var summary=cvData.summary;
-document.getElementById("summary").textContent=summary;
+if(summary === ""){
+    document.getElementsByClassName('summary-section')[0].style.display = 'none'
+}
+else{
+    document.getElementById("summary").textContent=summary;
+}
 
 // this for experiance
 var Experiences=document.getElementById("Experiences");
 var Experiencesarr= cvData.experances;
-for(var i=0;i<Experiencesarr.length;i++){
-    
-    Experiences.innerHTML+=`<h4 style="margin-left:10px;color:#434E5E;">${Experiencesarr[i].jobTitle}</h4>`;
-    Experiences.innerHTML+=`<p style="margin-left:30px;color:#58677c;font-size:20px;"> ${Experiencesarr[i].companyName}</p>`;
-    Experiences.innerHTML+=`<p style="margin-left:400px;color:#aab4c3;margin-top:-40px;"> ${Experiencesarr[i].startDate} - ${Experiencesarr[i].endDate}</p><br>`;
-    Experiences.innerHTML+=`<p style="margin-left:50px;margin-right:25px;color:gray;">${Experiencesarr[i].description}</p><br>`;
+if(Experiencesarr.length == 0){
+    document.getElementById('WExperiences').style.display = 'none'
 }
-
+for(var i=0;i<Experiencesarr.length;i++){
+    Experiences.innerHTML+=`<h4 style="margin-left:10px;color:#000000;">${Experiencesarr[i].jobTitle}</h4>`;
+    Experiences.innerHTML+=`<p style="margin-left:10px;color:#97AAC3;font-size: 20px"> ${Experiencesarr[i].companyName}</p>`;
+    if(Experiencesarr[i].startDate === "" || Experiencesarr[i].endDate === "")
+    {
+        var x = " ";   
+    }
+    else{
+        var x = "-";
+    }
+    Experiences.innerHTML+=`<p style="margin-left:400px;color:#97AAC3;margin-top:-40px;"> ${Experiencesarr[i].startDate} ${x} ${Experiencesarr[i].endDate}</p><br>`;
+    Experiences.innerHTML+=`<p style="margin-left:10px;margin-right:25px;color:gray;">${Experiencesarr[i].description}</p><br>`;
+}
 // this for skills
 var skills=document.getElementById("skills");
 var levelskill=document.getElementById("levelskill");
 var skillsarr= cvData.skills;
+
 for(var i=0;i<skillsarr.length;i++){
-    skills.innerHTML+=`<b style="margin-left:10px;color:gray;">${skillsarr[i].name}</b><br>`;
-    levelskill.innerHTML+=`<i style="margin-left:10px;color:#3582C4;">${skillsarr[i].level}</i><br>`;
+    skills.innerHTML+=`<tr style="color:gray;"><td style="color:gray;padding:10px;width: 150px;font-size: 17px">${skillsarr[i].name}</td><td style=" color:#3582C4;padding:10px;width: 150px;font-size: 17px">${skillsarr[i].level}</td></tr>`;
 }
 
 // this for Interests
@@ -49,12 +66,22 @@ for(var i=0;i<Interestsarr.length;i++){
 
 // this for education
 var education=document.getElementById("education");
-var degreearr= cvData.educations;
-for(var i=0;i<degreearr.length;i++){
+var educationarr= cvData.educations;
+if(educationarr.length == 0){
+    document.getElementById('education').style.display = 'none'
+}
+for(var i=0;i<educationarr.length;i++){
 
-    education.innerHTML+=`<h5 style="margin-left:10px;color:#434E5E;font-size:18px;;">${degreearr[i].educationDegree}</h5>`;
-    education.innerHTML+=`<div style="margin-left:10px;color:#58677c;font-size:16px;">${degreearr[i].schoolName}</div><br>`;
-    education.innerHTML+=`<i style="margin-left:10px;color:#AAB4C3;font-size:14px;">${degreearr[i].startDate} - ${degreearr[i].endDate}</i><br><br>`;
+    education.innerHTML+=`<h5 style="margin-left:10px;color:#434E5E;font-size:20px;">${educationarr[i].educationDegree}</h5>`;
+    education.innerHTML+=`<div style="margin-left:10px;color:#58677c;font-size:18px">${educationarr[i].schoolName}</div>`;
+    if(educationarr[i].startDate === "" || educationarr[i].endDate === ""  )
+    {
+        var z = " ";   
+    }
+    else{
+        var z = "-";
+    }
+    education.innerHTML+=`<i style="margin-left:10px;color:#aab4c3;font-size:16px">${educationarr[i].startDate} ${z} ${educationarr[i].endDate}</i><br><br>`;
 }
 
 // this for languages
@@ -62,11 +89,11 @@ var languages=document.getElementById("languages");
 var languagesarr= cvData.languages;
 for(var i=0;i<languagesarr.length;i++){
     
-    languages.innerHTML+=`<h6 style="margin-left:10px;color:gray;">${languagesarr[i]}</h6>`;
+    languages.innerHTML+=`<h6 style="margin-left:10px;color:gray;">${languagesarr[i].name}</h6>`;
 }
 
 document.getElementById("print").addEventListener("click", function(){ 
-    document.getElementById('print').style.visibility = 'hidden'
+    document.getElementById('print').style.display = 'none'
     window.print(); 
 }); 
 
