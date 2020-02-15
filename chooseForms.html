@@ -2,213 +2,216 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     
-    <!-- bootstrap CDN -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
- 
-     <!-- this is for calling icons  -->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CV Maker</title>
-    <link rel="icon" href="res/curriculum.svg">
+	<!-- bootstrap CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		  integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/chooseForm.css">
+	<!-- this is for calling icons  -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+	<title>CV Maker</title>
+	<link rel="icon" href="res/curriculum.svg">
+
+	<link rel="stylesheet" href="css/chooseForm.css">
 </head>
 
 <body>
 
-    <!-- start the navigationbar -->
-  
-        <nav class="navbar navbar-inverse" id="navbar">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- start the mobile button that appare on the small screen -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
-                        id="nav-btn">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- end the mobile button that appare on the small screen -->
-                    <a class="navbar-brand" href="index.html"><span class="my-span">CV</span>Maker</a>
-                    <!-- the brand -->
-                </div>
-                <!-- start the nav content  -->
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <!-- collaps for toggle the nav content  -->
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="index.html#temp"><i class="fas fa-eye" style="color: tomato;"></i> Templets</a></li>
-                        <li id="createCV" style="display: none"><a href="from.html"><i class="fas fa-magic"
-                                    style="color: tomato;"></i>
-                                CreateCV</a>
-                        </li>
-                        <li><a href="index.html#about"><i class="fas fa-address-card" style="color: tomato;"></i> About Us</a>
-                        </li>
-                        <li><a href="index.html#contact-us"><i class="fas fa-phone" style="color: tomato;"></i> Contact
-                                Us</a></li>
+<!-- start the navigationbar -->
 
-                    </ul>
-                    <ul id="userGroup" class="nav navbar-nav navbar-right" style="display: none">
-                        <li><a href="#" id="username"><span class="glyphicon glyphicon-user"></span></a>
-                        </li>
-                        <li><a href="#" id="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-                        </li>
-                    </ul>
+<nav class="navbar navbar-inverse" id="navbar">
+	<div class="container">
+		<div class="navbar-header">
+			<!-- start the mobile button that appare on the small screen -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
+					id="nav-btn">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<!-- end the mobile button that appare on the small screen -->
+			<a class="navbar-brand" href="index.html"><span class="my-span">CV</span>Maker</a>
+			<!-- the brand -->
+		</div>
+		<!-- start the nav content  -->
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<!-- collaps for toggle the nav content  -->
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+				<li><a href="index.html#temp"><i class="fas fa-eye" style="color: tomato;"></i> Templets</a></li>
+				<li id="createCV" style="display: none"><a href="from.html"><i class="fas fa-magic"
+																			   style="color: tomato;"></i>
+					CreateCV</a>
+				</li>
+				<li><a href="index.html#about"><i class="fas fa-address-card" style="color: tomato;"></i> About Us</a>
+				</li>
+				<li><a href="index.html#contact-us"><i class="fas fa-phone" style="color: tomato;"></i> Contact
+					Us</a></li>
 
-                    <ul id="authBtnsGroup" class="nav navbar-nav navbar-right">
-                        <li><a href="#" id="signupBtn"><span class="glyphicon glyphicon-user"></span> Sign
-                                Up</a>
-                        </li>
-                        <li><a href="#" id="loginBtn"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- end the nav content  -->
-            </div>
-        </nav>
-  
-    <!-- end the navigationbar -->
+			</ul>
+			<ul id="userGroup" class="nav navbar-nav navbar-right" style="display: none">
+				<li><a href="#" id="username"><span class="glyphicon glyphicon-user"></span></a>
+				</li>
+				<li><a href="#" id="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+				</li>
+			</ul>
+
+			<ul id="authBtnsGroup" class="nav navbar-nav navbar-right">
+				<li><a href="#" id="signupBtn"><span class="glyphicon glyphicon-user"></span> Sign
+					Up</a>
+				</li>
+				<li><a href="#" id="loginBtn"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+				</li>
+			</ul>
+		</div>
+		<!-- end the nav content  -->
+	</div>
+</nav>
+
+<!-- end the navigationbar -->
 
 
-    <div class="container" style="margin-top: 100px;">
-        <div class="row">
+<div class="container" style="margin-top: 100px;">
+	<div class="row">
 
-            <div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <img src="res/screencapture-0-0-0-0-8000-temp1-index-html-2020-02-13-18_36_15.png" alt="..."
-                    style="width: 100%;">
-                <div class="overlay">
-                    <div><a href="Template 1/temp1.html" target="_blank" class="text">USE</a></div>
-                </div>
-            </div>
+		<div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<img src="res/screencapture-0-0-0-0-8000-temp1-index-html-2020-02-13-18_36_15.png" alt="..."
+				 style="width: 100%;">
+			<div class="overlay">
+				<div><a href="Template 1/temp1.html" target="_blank" class="text">USE</a></div>
+			</div>
+		</div>
 
-            <div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <img src="res/screencapture-0-0-0-0-8000-temp2-orbit-v2-0-index-html-2020-02-13-18_35_40.png" alt="..."
-                    style="width: 100%;">
-                <div class="overlay">
-                    <div><a href="Template 2/temp2.html" target="_blank" class="text">USE</a></div>
-                </div>
-            </div>
+		<div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<img src="res/screencapture-0-0-0-0-8000-temp2-orbit-v2-0-index-html-2020-02-13-18_35_40.png" alt="..."
+				 style="width: 100%;">
+			<div class="overlay">
+				<div><a href="Template 2/temp2.html" target="_blank" class="text">USE</a></div>
+			</div>
+		</div>
 
-            <div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
-                    alt="..." style="width: 100%;">
-                <div class="overlay">
-                    <div><a href="Template 3/temp3.html" target="_blank" class="text">USE</a></div>
-                </div>
-            </div>
+		<div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
+				 alt="..." style="width: 100%;">
+			<div class="overlay">
+				<div><a href="Template 3/temp3.html" target="_blank" class="text">USE</a></div>
+			</div>
+		</div>
 
-            <div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
-                    alt="..." style="width: 100%;">
-                <div class="overlay">
-                    <div><a href="Template 4/temp4.html" target="_blank" class="text">USE</a></div>
-                </div>
-            </div>
+		<div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
+				 alt="..." style="width: 100%;">
+			<div class="overlay">
+				<div><a href="Template 4/temp4.html" target="_blank" class="text">USE</a></div>
+			</div>
+		</div>
 
-            <div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
-                    alt="..." style="width: 100%;">
-                <div class="overlay">
-                    <div><a href="Template 5/temp5.html" target="_blank" class="text">USE</a></div>
-                </div>
-            </div>
+		<div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
+				 alt="..." style="width: 100%;">
+			<div class="overlay">
+				<div><a href="Template 5/temp5.html" target="_blank" class="text">USE</a></div>
+			</div>
+		</div>
 
-            <div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
-                    alt="..." style="width: 100%;">
-                <div class="overlay">
-                    <div><a href="Template 6/temp6.html" target="_blank" class="text">USE</a></div>
-                </div>
-            </div>
+		<div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
+				 alt="..." style="width: 100%;">
+			<div class="overlay">
+				<div><a href="Template 6/temp6.html" target="_blank" class="text">USE</a></div>
+			</div>
+		</div>
 
-            <div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
-                    alt="..." style="width: 100%;">
-                <div class="overlay">
-                    <div><a href="Template 7/temp7.html" target="_blank" class="text">USE</a></div>
-                </div>
-            </div>
+		<div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
+				 alt="..." style="width: 100%;">
+			<div class="overlay">
+				<div><a href="Template 7/temp7.html" target="_blank" class="text">USE</a></div>
+			</div>
+		</div>
 
-            <div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
-                    alt="..." style="width: 100%;">
-                <div class="overlay">
-                    <div><a href="Template 8/Temp8.html" target="_blank" class="text">USE</a></div>
-                </div>
-            </div>
+		<div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
+				 alt="..." style="width: 100%;">
+			<div class="overlay">
+				<div><a href="Template 8/Temp8.html" target="_blank" class="text">USE</a></div>
+			</div>
+		</div>
 
-            <div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
-                    alt="..." style="width: 100%;">
-                <div class="overlay">
-                    <div><a href="Template 9/Temp9.html" target="_blank" class="text">USE</a></div>
-                </div>
-            </div>
+		<div class="card col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<img src="res/screencapture-0-0-0-0-8000-temp3-pillar-v1-0-1-index-html-2020-02-13-18_35_55.png"
+				 alt="..." style="width: 100%;">
+			<div class="overlay">
+				<div><a href="Template 9/Temp9.html" target="_blank" class="text">USE</a></div>
+			</div>
+		</div>
 
-        </div>
-    </div>
+	</div>
+</div>
 
-    <!-- Start Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <h6 class="col-lg-12 col-md-12 col-sm-12">Copyrights 2020 &copy; <span> boys </span></h6
-                    class="col-lg-12 col-md-12 col-sm-12">
+<!-- Start Footer -->
+<footer>
+	<div class="container">
+		<div class="row">
+			<h6 class="col-lg-12 col-md-12 col-sm-12">Copyrights 2020 &copy; <span> boys </span></h6
+					class="col-lg-12 col-md-12 col-sm-12">
 
-                <ul class="col-lg-12 col-md-12 col-sm-12">
-                    <li class="Facebook">
-                        <a href="https://www.facebook.com/abdo.halem.96" target="_blank">
-                            <i class="fab fa-2x fa-facebook" style="color: #4267b2"></i>
-                        </a>
-                    </li>
-                    <li class="Twtter">
-                        <a href="https://twitter.com" target="_blank">
-                            <i class="fab fa-2x fa-twitter-square" style="color: #1da1f2"></i>
-                        </a>
-                    </li>
-                    <li class="Instagram">
-                        <a href="https://www.instagram.com" target="_blank">
-                            <i class="fab fa-2x fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="Google">
-                        <a href="#" target="_blank">
-                            <i class="fab fa-2x fa-google-plus-square" style="color: #db4437"></i>
-                        </a>
-                    </li>
-                    <li class="Facebook">
-                        <a href="#" target="_blank">
-                            <i class="fab fa-2x fa-linkedin-square" style="color: #0077B5"></i>
-                        </a>
-                    </li>
-                    <li class="Github">
-                        <a href="#" target="_blank">
-                            <i class="fab fa-2x fa-github-square" style="color: wheat"></i>
-                        </a>
-                    </li>
-                    <li class="CodePen">
-                        <a href="#" target="_blank">
-                            <i class="fab fa-2x fa-codepen" style="color:whitesmoke"></i>
-                        </a>
-                    </li>
-                    <li class="StackOverFlow">
-                        <a href="#" target="_blank">
-                            <i class="fab fa-2x fa-stack-overflow" style="color:#f48024"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+			<ul class="col-lg-12 col-md-12 col-sm-12">
+				<li class="Facebook">
+					<a href="https://www.facebook.com/abdo.halem.96" target="_blank">
+						<i class="fab fa-2x fa-facebook" style="color: #4267b2"></i>
+					</a>
+				</li>
+				<li class="Twtter">
+					<a href="https://twitter.com" target="_blank">
+						<i class="fab fa-2x fa-twitter-square" style="color: #1da1f2"></i>
+					</a>
+				</li>
+				<li class="Instagram">
+					<a href="https://www.instagram.com" target="_blank">
+						<i class="fab fa-2x fa-instagram"></i>
+					</a>
+				</li>
+				<li class="Google">
+					<a href="#" target="_blank">
+						<i class="fab fa-2x fa-google-plus-square" style="color: #db4437"></i>
+					</a>
+				</li>
+				<li class="Facebook">
+					<a href="#" target="_blank">
+						<i class="fab fa-2x fa-linkedin-square" style="color: #0077B5"></i>
+					</a>
+				</li>
+				<li class="Github">
+					<a href="#" target="_blank">
+						<i class="fab fa-2x fa-github-square" style="color: wheat"></i>
+					</a>
+				</li>
+				<li class="CodePen">
+					<a href="#" target="_blank">
+						<i class="fab fa-2x fa-codepen" style="color:whitesmoke"></i>
+					</a>
+				</li>
+				<li class="StackOverFlow">
+					<a href="#" target="_blank">
+						<i class="fab fa-2x fa-stack-overflow" style="color:#f48024"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</footer>
 
 </body>
 
+<footer>
+	<script src="js/chooseforms.js"></script>
+</footer>
 </html>
