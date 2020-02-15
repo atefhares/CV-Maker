@@ -92,6 +92,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
+.name-block{
+  position: absolute;
+    top: 45px;
+    right: 100px;
+    line-height: 1.9;
+}
 
 p {
   margin-top: 0;
@@ -109,7 +115,8 @@ p {
 	font-size:19px;
 	padding:9px 42px;
 	text-decoration:none;
-	text-shadow:0px 1px 4px #FF5733;
+  text-shadow:0px 1px 4px #FF5733;
+  border: none;
 }
 .print:hover {
 	background:linear-gradient(to bottom, #FF5733 5%, #FF5733 100%);
@@ -4829,6 +4836,7 @@ input[type="button"].btn-block {
 
 .media-body {
   flex: 1;
+  position: relative;
 }
 
 .list-group {
@@ -8584,10 +8592,14 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   font-size: 2.25rem;
   letter-spacing: 0.175rem;
   font-weight: 900;
+  position: relative;
+    top: 24px;
 }
 
 .resume-header .title {
   font-size: 1.5rem;
+  position: relative;
+    top: 24px;
 }
 
 .resume-header a {
