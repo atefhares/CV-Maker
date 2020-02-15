@@ -1,4 +1,4 @@
-import User from "../js/User";
+import User from "../js/User.js";
 let userEmail = localStorage.getItem("currentLoggedInUserId");
 let currentLoggedInUserObj = Object.assign(new User, JSON.parse(localStorage.getItem(userEmail)));
 var cvData = currentLoggedInUserObj.data;
