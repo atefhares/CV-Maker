@@ -46,21 +46,21 @@ for(var i=0;i<Interestsarr.length;i++){
 
 // this for education
 var education=document.getElementById("education");
-var degreearr= cvData.educations;
-if(degreearr.length == 0){
+var educationarr= cvData.educations;
+if(educationarr.length == 0){
     document.getElementById('eeducation').style.display = 'none'
 }
-for(var i=0;i<degreearr.length;i++){
-    education.innerHTML+=`<h6 style="margin-left:5px;color:gray;font-size:18px;word-break: break-all;">${degreearr[i].educationDegree}</h6>`;
-    education.innerHTML+=`<div style="margin-left:5px;color:red;font-size:16px;word-break: break-all;">${degreearr[i].schoolName}</div><br>`;
-    if(degreearr[i].startDate === "" || degreearr[i].endDate === ""  )
+for(var i=0;i<educationarr.length;i++){
+    education.innerHTML+=`<h6 style="margin-left:5px;color:gray;font-size:18px;word-break: break-all;">${educationarr[i].educationDegree}</h6>`;
+    education.innerHTML+=`<div style="margin-left:5px;color:red;font-size:16px;word-break: break-all;">${educationarr[i].schoolName}</div><br>`;
+    if(educationarr[i].startDate === "" || educationarr[i].endDate === ""  )
     {
         var z = " ";   
     }
     else{
         var z = "-";
     }
-    education.innerHTML+=`<i style="margin-left:5px;color:gray;font-size:14px;word-break: break-all;">${degreearr[i].startDate} ${z} ${degreearr[i].endDate}</i><br><br>`;
+    education.innerHTML+=`<i style="margin-left:5px;color:gray;font-size:14px;word-break: break-all;">${educationarr[i].startDate} ${z} ${educationarr[i].endDate}</i><br><br>`;
 }
 
 // this for experiance
