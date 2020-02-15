@@ -236,7 +236,7 @@ function validateEmail() {
     }
     else if(! input.value.match(mailformat))
     {
-        alert("You have entered an invalid email address!");
+        err.push("You have entered an invalid email address!");
     }
 }
 
@@ -248,7 +248,7 @@ function validatePhoneNumber() {
     }
     else if(! input.value.match(phoneno))
     {
-        alert("You have entered an invalid Phone Number !");
+        err.push("You have entered an invalid Phone Number !");
     }
 }
 
