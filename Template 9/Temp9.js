@@ -66,7 +66,7 @@ for(var i=0;i<Interestsarr.length;i++){
 var education=document.getElementById("education");
 var educationarr= cvData.educations;
 if(educationarr.length == 0){
-    document.getElementsByClassName('education-section')[0].style.display = 'none'
+    document.getElementsByClassName('education-section')[0].style.display = 'none';
 }
 for(var i=0;i<educationarr.length;i++){
 
