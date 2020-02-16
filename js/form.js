@@ -94,8 +94,6 @@ if (currentLoggedInUserObj.data) {
             parent.appendChild(document.createElement("hr"));
         });
     }
-
-
 }
 
 //-----------------------------------------------------------------------------------------
