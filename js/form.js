@@ -1,5 +1,101 @@
-
 import User from './User.js'
+
+//-----------------------------------------------------------------------------------------
+// set data into th form
+
+let userEmail = localStorage.getItem("currentLoggedInUserId");
+let currentLoggedInUserObj = Object.assign(new User, JSON.parse(localStorage.getItem(userEmail)));
+var cvData = currentLoggedInUserObj.data;
+
+document.getElementById("fullName").value = cvData.fullName;
+document.getElementById("infoJobTitle").value = cvData.jobTitle;
+document.getElementById("email").value = cvData.email;
+document.getElementById("phoneNumber").value = cvData.phoneNumber;
+document.getElementById("city").value = cvData.city;
+document.getElementById("summary").value = cvData.summary;
+
+
+var parent = document.getElementsByClassName("skills-container")[0];
+var skill = document.getElementsByClassName("skill")[0];
+if ([].slice.call(cvData.skills).length > 0) {
+    parent.innerHTML = "";
+
+    [].slice.call(cvData.skills).forEach(skillObj => {
+        var newSkill = skill.cloneNode(true);
+        newSkill.getElementsByClassName("skillInput")[0].value = skillObj.name;
+        newSkill.getElementsByClassName("my-btn-select")[0].value = skillObj.level;
+        parent.appendChild(newSkill);
+        parent.appendChild(document.createElement("hr"));
+    });
+}
+
+
+parent = document.getElementsByClassName("interests-container")[0];
+var interest = document.getElementsByClassName("interest")[0];
+if ([].slice.call(cvData.interests).length > 0) {
+    parent.innerHTML = "";
+
+    [].slice.call(cvData.interests).forEach(interestObj => {
+        var newInterest = interest.cloneNode(true);
+        newInterest.getElementsByClassName("interestInput")[0].value = interestObj.name;
+        parent.appendChild(newInterest);
+        parent.appendChild(document.createElement("hr"));
+    });
+}
+
+
+parent = document.getElementsByClassName("languages-container")[0];
+var language = document.getElementsByClassName("language")[0];
+if ([].slice.call(cvData.languages).length > 0) {
+    parent.innerHTML = "";
+
+    [].slice.call(cvData.languages).forEach(langObj => {
+        var newLanguage = language.cloneNode(true);
+        newLanguage.getElementsByClassName("languageInput")[0].value = langObj.name;
+        parent.appendChild(newLanguage);
+        parent.appendChild(document.createElement("hr"));
+    });
+}
+
+parent = document.getElementsByClassName("educations-container")[0];
+var education = document.getElementsByClassName("education")[0];
+if ([].slice.call(cvData.educations).length > 0) {
+    parent.innerHTML = "";
+
+    [].slice.call(cvData.educations).forEach(eduObj => {
+        var newEducation = education.cloneNode(true);
+        newEducation.getElementsByClassName("schoolName")[0].value = eduObj.schoolName;
+        newEducation.getElementsByClassName("educationDegree")[0].value = eduObj.educationDegree;
+        newEducation.getElementsByClassName("startDate")[0].value = eduObj.startDate;
+        newEducation.getElementsByClassName("endDate")[0].value = eduObj.endDate;
+
+        parent.appendChild(newEducation);
+        parent.appendChild(document.createElement("hr"));
+    });
+}
+
+parent = document.getElementsByClassName("experances-container")[0];
+var experance = document.getElementsByClassName("experance")[0];
+if ([].slice.call(cvData.experances).length > 0) {
+    parent.innerHTML = "";
+
+    [].slice.call(cvData.experances).forEach(exObj => {
+        var newExperance = experance.cloneNode(true);
+        newExperance.getElementsByClassName("companyName")[0].value = exObj.schoolName;
+        newExperance.getElementsByClassName("jobTitle")[0].value = exObj.educationDegree;
+        newExperance.getElementsByClassName("startDate")[0].value = exObj.startDate;
+        newExperance.getElementsByClassName("endDate")[0].value = exObj.endDate;
+        newExperance.getElementsByClassName("description")[0].value = exObj.description;
+
+        parent.appendChild(newExperance);
+        parent.appendChild(document.createElement("hr"));
+    });
+}
+
+
+
+
+//-----------------------------------------------------------------------------------------
 
 var err = [];
 var cashederr = [];
